@@ -31,4 +31,5 @@ public class DetailsDTO {
         this.synopsis = synopsis;
     }
 
+
 }

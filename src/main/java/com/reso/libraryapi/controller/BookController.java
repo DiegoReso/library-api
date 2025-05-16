@@ -6,6 +6,7 @@ import com.reso.libraryapi.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +23,12 @@ public class BookController {
     public ResponseEntity<List<BookDTO>> getAll(){
         List<BookDTO> list = service.getAll();
         return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping("/{id}")
+    public  ResponseEntity<BookDTO> getById(@PathVariable Long id){
+        BookDTO book = service.getById(id);
+        return ResponseEntity.ok().body(book);
     }
 
 }
