@@ -3,17 +3,21 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="-403.5" y="-202.33333333333337">com.reso.libraryapi.model.Book</node>
+    <node x="-887.5" y="-860.5">com.reso.libraryapi.model.Details</node>
+    <node x="-893.0" y="-693.0">com.reso.libraryapi.model.Book</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="false" x="10.0" y="10.0" />
-  <SelectedNodes>
-    <node>com.reso.libraryapi.model.Book</node>
-  </SelectedNodes>
+  <edges>
+    <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.Details" relationship="TO_ONE">
+      <point x="0.0" y="-86.0" />
+      <point x="0.0" y="33.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="true" x="-798.9999999999999" y="-681.0" />
+  <SelectedNodes />
   <Categories>
+    <Category>Fields</Category>
     <Category>Inner Classes</Category>
-    <Category>Methods</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
