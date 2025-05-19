@@ -3,23 +3,48 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="-3254.0776265462227" y="-2406.717142740885">com.reso.libraryapi.model.Book</node>
-    <node x="-3248.5776265462223" y="-2550.3752848307286">com.reso.libraryapi.model.Details</node>
+    <node x="-3236.0" y="-2224.0">com.reso.libraryapi.model.Book</node>
+    <node x="-3175.0" y="-2541.0">com.reso.libraryapi.model.Author</node>
+    <node x="-3090.5" y="-2410.5">com.reso.libraryapi.model.Details</node>
+    <node x="-3255.0" y="-2421.0">com.reso.libraryapi.model.Genre</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.Genre" relationship="TO_MANY">
+      <point x="0.0" y="-107.0" />
+      <point x="-3152.0" y="-2297.0" />
+      <point x="-3192.0" y="-2297.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="com.reso.libraryapi.model.Genre" target="com.reso.libraryapi.model.Book" relationship="TO_MANY">
+      <point x="0.0" y="44.0" />
+      <point x="-3192.0" y="-2257.0" />
+      <point x="-3152.0" y="-2257.0" />
+      <point x="0.0" y="-107.0" />
+    </edge>
     <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.Details" relationship="TO_ONE">
-      <point x="0.0" y="-86.0" />
-      <point x="-3170.0776265462227" y="-235.73152669270848" />
-      <point x="-3170.0776265462223" y="-235.73152669270848" />
+      <point x="0.0" y="-107.0" />
+      <point x="-3152.0" y="-2297.0" />
+      <point x="-3012.0" y="-2297.0" />
       <point x="0.0" y="33.5" />
     </edge>
+    <edge source="com.reso.libraryapi.model.Author" target="com.reso.libraryapi.model.Book" relationship="TO_MANY">
+      <point x="0.0" y="44.0" />
+      <point x="-3112.0" y="-2277.0" />
+      <point x="-3192.0" y="-2277.0" />
+      <point x="-3192.0" y="-2257.0" />
+      <point x="-3152.0" y="-2257.0" />
+      <point x="0.0" y="-107.0" />
+    </edge>
+    <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.Author" relationship="TO_ONE">
+      <point x="0.0" y="-107.0" />
+      <point x="-3152.0" y="-2297.0" />
+      <point x="-3112.0" y="-2297.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="0.9600000000000007" showDependencies="true" x="-3087.9791666666674" y="-2211.083333333334" />
-  <SelectedNodes>
-    <node>com.reso.libraryapi.model.Book</node>
-    <node>com.reso.libraryapi.model.Details</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Compact" zoom="1.2000000000000002" showDependencies="true" x="-3077.0833333333335" y="-2266.3333333333326" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Inner Classes</Category>

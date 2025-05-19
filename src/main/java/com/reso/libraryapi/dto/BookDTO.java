@@ -5,6 +5,7 @@ import com.reso.libraryapi.model.Book;
 import com.reso.libraryapi.model.Genre;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -19,7 +20,7 @@ public class BookDTO {
     private String publisher;
     private DetailsDTO details;
     private Set<GenreDTO> genres = new HashSet<>();
-    private Author writer;
+    private AuthorDTO writer;
 
     public BookDTO() {
     }
@@ -37,14 +38,14 @@ public class BookDTO {
                 this.genres.add(new GenreDTO(genre));
             }
         }
-        this.writer = book.getWriter();
+        this.writer = new AuthorDTO(book.getWriter());
     }
 
-    public Author getWriter() {
+    public AuthorDTO getWriter() {
         return writer;
     }
 
-    public void setWriter(Author writer) {
+    public void setWriter(AuthorDTO writer) {
         this.writer = writer;
     }
 
