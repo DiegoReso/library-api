@@ -1,5 +1,6 @@
 package com.reso.libraryapi.dto;
 
+import com.reso.libraryapi.model.Author;
 import com.reso.libraryapi.model.Book;
 import com.reso.libraryapi.model.Genre;
 
@@ -18,6 +19,7 @@ public class BookDTO {
     private String publisher;
     private DetailsDTO details;
     private Set<GenreDTO> genres = new HashSet<>();
+    private Author writer;
 
     public BookDTO() {
     }
@@ -35,6 +37,15 @@ public class BookDTO {
                 this.genres.add(new GenreDTO(genre));
             }
         }
+        this.writer = book.getWriter();
+    }
+
+    public Author getWriter() {
+        return writer;
+    }
+
+    public void setWriter(Author writer) {
+        this.writer = writer;
     }
 
     public Set<GenreDTO> getGenres() {

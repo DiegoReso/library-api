@@ -3,18 +3,23 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="-887.5" y="-860.5">com.reso.libraryapi.model.Details</node>
-    <node x="-893.0" y="-693.0">com.reso.libraryapi.model.Book</node>
+    <node x="-3254.0776265462227" y="-2406.717142740885">com.reso.libraryapi.model.Book</node>
+    <node x="-3248.5776265462223" y="-2550.3752848307286">com.reso.libraryapi.model.Details</node>
   </nodes>
   <notes />
   <edges>
     <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.Details" relationship="TO_ONE">
       <point x="0.0" y="-86.0" />
+      <point x="-3170.0776265462227" y="-235.73152669270848" />
+      <point x="-3170.0776265462223" y="-235.73152669270848" />
       <point x="0.0" y="33.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="0.7680000000000002" showDependencies="true" x="-654.9739583333335" y="-214.25781250000034" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Compact" zoom="0.9600000000000007" showDependencies="true" x="-3087.9791666666674" y="-2211.083333333334" />
+  <SelectedNodes>
+    <node>com.reso.libraryapi.model.Book</node>
+    <node>com.reso.libraryapi.model.Details</node>
+  </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Inner Classes</Category>

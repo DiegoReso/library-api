@@ -1,5 +1,6 @@
 package com.reso.libraryapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -32,10 +33,15 @@ public class Book {
     )
     private Set<Genre> genres = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name = "writer_id")
+    private Author writer;
+
     public Book() {
     }
 
-    public Book(Long id, String title, String isbn, String author, LocalDate publicationDate, String publisher, Details details, Set<Genre> genres) {
+    public Book(Long id, String title, String isbn, String author, LocalDate publicationDate, String publisher,
+                Details details, Set<Genre> genres, Author writer) {
         this.id = id;
         this.title = title;
         this.isbn = isbn;
@@ -44,8 +50,16 @@ public class Book {
         this.publisher = publisher;
         this.details = details;
         this.genres = genres;
+        this.writer = writer;
     }
 
+    public Author getWriter() {
+        return writer;
+    }
+
+    public void setWriter(Author writer) {
+        this.writer = writer;
+    }
 
     public void setGenres(Set<Genre> genres) {
         this.genres = genres;

@@ -3,28 +3,38 @@ package com.reso.libraryapi.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-public class Genre {
+public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @ManyToMany(mappedBy = "genres")
+    @OneToMany(mappedBy = "writer")
     @JsonIgnore
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
-    public Genre() {
-
+    public Author() {
     }
 
-    public Genre(Long id, String name) {
+    public Author(Long id, String name, Set<Book> books) {
         this.id = id;
         this.name = name;
+        this.books = books;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     public Long getId() {
@@ -43,19 +53,11 @@ public class Genre {
         this.name = name;
     }
 
-    public Set<Book> getBooks() {
-        return books;
-    }
-
-    public void setBook(Set<Book> books) {
-        this.books = books;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Genre genre = (Genre) o;
-        return Objects.equals(id, genre.id);
+        Author author = (Author) o;
+        return Objects.equals(id, author.id);
     }
 
     @Override

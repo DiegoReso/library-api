@@ -51,6 +51,11 @@ public class BookService {
         return new BookDTO(book);
     }
 
+    @Transactional
+    public void delete(Long id){
+        repository.deleteById(id);
+    }
+
     private void updateBookFromDTO(Book entity, BookDTO bookDTO) {
         entity.setTitle(bookDTO.getTitle());
         entity.setAuthor(bookDTO.getAuthor());
