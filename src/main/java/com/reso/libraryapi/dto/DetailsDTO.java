@@ -10,15 +10,14 @@ public class DetailsDTO {
     private Integer numberOfPages;
     private String synopsis;
 
+    public DetailsDTO() {
+    }
+
     public DetailsDTO(Details details) {
         this.numberOfPages = details.getNumberOfPages();
         this.synopsis = details.getSynopsis();
     }
 
-    public DetailsDTO(Integer numberOfPages, String synopsis) {
-        this.numberOfPages = numberOfPages;
-        this.synopsis = synopsis;
-    }
 
     public Integer getNumberOfPages() {
         return numberOfPages;

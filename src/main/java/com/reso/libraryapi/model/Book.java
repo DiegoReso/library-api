@@ -14,11 +14,9 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+
     private String title;
-    @Column(nullable = false)
     private String author;
-    @Column(nullable = false)
     private String isbn;
     private LocalDate publicationDate;
     private String publisher;
@@ -48,6 +46,10 @@ public class Book {
         this.genres = genres;
     }
 
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
+    }
 
     public Set<Genre> getGenres() {
         return genres;
