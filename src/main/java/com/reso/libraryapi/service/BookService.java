@@ -51,8 +51,9 @@ public class BookService {
         return new BookDTO(book);
     }
 
-    @Transactional
-    public void delete(Long id){
+    public void delete(Long id) {
+        repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Livro não encontrado com o ID: " + id));
         repository.deleteById(id);
     }
 

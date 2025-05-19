@@ -1,23 +1,24 @@
-package com.reso.libraryapi.dto;
+package com.reso.libraryapi.model;
 
 
-import com.reso.libraryapi.model.Author;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
-public class AuthorDTO {
+@Entity
+@Table(name = "users")
+public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    public AuthorDTO() {
-    }
+    @Embedded
+    private Address address;
 
-    public AuthorDTO(Author writer) {
-        this.id = writer.getId();
-        this.name = writer.getName();
+    public User() {
     }
-
 
     public Long getId() {
         return id;
@@ -35,12 +36,19 @@ public class AuthorDTO {
         this.name = name;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        AuthorDTO authorDTO = (AuthorDTO) o;
-        return Objects.equals(id, authorDTO.id);
+        User user = (User) o;
+        return Objects.equals(id, user.id);
     }
 
     @Override

@@ -16,4 +16,5 @@ INSERT INTO book_genre (book_id, genre_id) VALUES(1, 3);
 INSERT INTO book_genre (book_id, genre_id) VALUES(2, 2);
 INSERT INTO book_genre (book_id, genre_id) VALUES(3, 1);
 
-
+INSERT INTO Users (name, street, number, city, state) VALUES('Diego', 'cross street', '17', 'Marlborough',
+                                                             'Massachupetis');
