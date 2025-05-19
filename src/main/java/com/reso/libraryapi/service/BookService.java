@@ -42,6 +42,15 @@ public class BookService {
         return new BookDTO(book);
     }
 
+    @Transactional
+    public BookDTO update(Long id,BookDTO bookDTO){
+        Book book = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Book not found with id: " + id));
+        updateBookFromDTO(book, bookDTO);
+        book = repository.save(book);
+        return new BookDTO(book);
+    }
+
     private void updateBookFromDTO(Book entity, BookDTO bookDTO) {
         entity.setTitle(bookDTO.getTitle());
         entity.setAuthor(bookDTO.getAuthor());
@@ -64,4 +73,6 @@ public class BookService {
         }
         entity.setGenres(genres);
     }
+
+
 }

@@ -4,9 +4,11 @@ import com.reso.libraryapi.dto.BookDTO;
 import com.reso.libraryapi.model.Book;
 import com.reso.libraryapi.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -31,6 +33,12 @@ public class BookController {
     @PostMapping
     public ResponseEntity<BookDTO> insertBook(@RequestBody BookDTO book){
         BookDTO bookDTO = service.insert(book);
-        return ResponseEntity.ok(bookDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(bookDTO);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<BookDTO> updateBook(@RequestBody BookDTO book, @PathVariable Long id){
+        BookDTO bookDTO = service.update(id,book);
+        return ResponseEntity.ok(book);
     }
 }
