@@ -30,5 +30,4 @@ public class BookController {
         BookDTO book = service.getById(id);
         return ResponseEntity.ok().body(book);
     }
-
 }

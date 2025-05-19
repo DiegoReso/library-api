@@ -1,3 +1,9 @@
 INSERT INTO Book (id, title, author, isbn, publication_date, publisher, number_of_pages, synopsis) VALUES (1, 'Dom Quixote', 'Miguel de Cervantes', '978-85-7232-691-0', '1605-01-01', 'Francisco Robles', 1000, 'A história de um nobre que perde a sanidade após ler muitos romances de cavalaria.');
 INSERT INTO Book (id, title, author, isbn, publication_date, publisher, number_of_pages, synopsis) VALUES (2, '1984', 'George Orwell', '978-0451524935', '1949-06-08', 'Secker & Warburg', 328, 'Um romance distópico sobre um futuro onde o governo controla todos os aspectos da vida das pessoas.');
 INSERT INTO Book (id, title, author, isbn, publication_date, publisher, number_of_pages, synopsis) VALUES (3, 'O Senhor dos Anéis', 'J.R.R. Tolkien', '978-0547928227', '1954-07-29', 'Allen & Unwin', 1178, 'Uma épica aventura de fantasia sobre a jornada para destruir um anel mágico e derrotar o Senhor do Escuro.');
+
+INSERT INTO Genre (name) VALUES ('Ficção'), ('Romance'),('Fantasia');
+
+INSERT INTO book_genre (book_id, genre_id) VALUES(1, 3);
+INSERT INTO book_genre (book_id, genre_id) VALUES(2, 2);
+INSERT INTO book_genre (book_id, genre_id) VALUES(3, 1);

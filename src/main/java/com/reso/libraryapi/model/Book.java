@@ -3,7 +3,9 @@ package com.reso.libraryapi.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -24,10 +26,18 @@ public class Book {
     @Embedded
     private Details details;
 
+    @ManyToMany
+    @JoinTable(
+            name = "book_genre",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn (name = "genre_id")
+    )
+    private Set<Genre> genres = new HashSet<>();
+
     public Book() {
     }
 
-    public Book(Long id, String title, String isbn, String author, LocalDate publicationDate, String publisher, Details details) {
+    public Book(Long id, String title, String isbn, String author, LocalDate publicationDate, String publisher, Details details, Set<Genre> genres) {
         this.id = id;
         this.title = title;
         this.isbn = isbn;
@@ -35,6 +45,12 @@ public class Book {
         this.publicationDate = publicationDate;
         this.publisher = publisher;
         this.details = details;
+        this.genres = genres;
+    }
+
+
+    public Set<Genre> getGenres() {
+        return genres;
     }
 
     public Long getId() {

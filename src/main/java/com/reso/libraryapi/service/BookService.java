@@ -26,9 +26,7 @@ public class BookService {
 
     @Transactional(readOnly = true)
     public BookDTO getById(Long id){
-        return repository.findById(id).map(BookDTO::new).orElseThrow(() -> new ResourceNotFoundException("Book not found " +
-                "with id " + id));
-
+        return repository.findById(id).map(BookDTO::new).orElseThrow(() -> new ResourceNotFoundException("Book not found with id " + id));
     }
 
 }

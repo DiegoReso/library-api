@@ -1,9 +1,12 @@
 package com.reso.libraryapi.dto;
 
 import com.reso.libraryapi.model.Book;
+import com.reso.libraryapi.model.Genre;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class BookDTO {
 
@@ -14,20 +17,11 @@ public class BookDTO {
     private LocalDate publicationDate;
     private String publisher;
     private DetailsDTO details;
-
+    private Set<Genre> genres = new HashSet<>();
 
     public BookDTO() {
     }
 
-    public BookDTO(DetailsDTO details, Long id, String title, String author, String isbn, LocalDate publicationDate, String publisher) {
-        this.details = details;
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.publicationDate = publicationDate;
-        this.publisher = publisher;
-    }
 
     public BookDTO(Book book) {
         this.id = book.getId();
@@ -37,8 +31,16 @@ public class BookDTO {
         this.publicationDate = book.getPublicationDate();
         this.publisher = book.getPublisher();
         this.details = new DetailsDTO(book.getDetails());
+        this.genres  = book.getGenres();
     }
 
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
+    }
 
     public Long getId() {
         return id;
