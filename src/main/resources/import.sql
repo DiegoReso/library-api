@@ -5,5 +5,7 @@ INSERT INTO Book (id, title, author, isbn, publication_date, publisher, number_o
 INSERT INTO Genre (name) VALUES ('Ficção'), ('Romance'),('Fantasia');
 
 INSERT INTO book_genre (book_id, genre_id) VALUES(1, 3);
+INSERT INTO book_genre (book_id, genre_id) VALUES(1, 2);
 INSERT INTO book_genre (book_id, genre_id) VALUES(2, 2);
 INSERT INTO book_genre (book_id, genre_id) VALUES(3, 1);
+

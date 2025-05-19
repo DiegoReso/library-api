@@ -17,11 +17,10 @@ public class BookDTO {
     private LocalDate publicationDate;
     private String publisher;
     private DetailsDTO details;
-    private Set<Genre> genres = new HashSet<>();
+    private Set<GenreDTO> genres = new HashSet<>();
 
     public BookDTO() {
     }
-
 
     public BookDTO(Book book) {
         this.id = book.getId();
@@ -31,14 +30,18 @@ public class BookDTO {
         this.publicationDate = book.getPublicationDate();
         this.publisher = book.getPublisher();
         this.details = new DetailsDTO(book.getDetails());
-        this.genres  = book.getGenres();
+        if(book.getGenres() != null){
+            for(Genre genre : book.getGenres()){
+                this.genres.add(new GenreDTO(genre));
+            }
+        }
     }
 
-    public Set<Genre> getGenres() {
+    public Set<GenreDTO> getGenres() {
         return genres;
     }
 
-    public void setGenres(Set<Genre> genres) {
+    public void setGenres(Set<GenreDTO> genres) {
         this.genres = genres;
     }
 

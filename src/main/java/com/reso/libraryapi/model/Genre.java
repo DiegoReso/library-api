@@ -21,6 +21,7 @@ public class Genre {
     public Genre() {
 
     }
+
     public Genre(Long id, String name, Set<Book> books) {
         this.id = id;
         this.name = name;
