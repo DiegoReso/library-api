@@ -1,4 +1,4 @@
-# API de Gerenciamento de Biblioteca Com Spring Booot, Maven, JPA / Hibernate.
+# API de Gerenciamento de Biblioteca Com Spring Booot, Maven, JPA / Hibernate e Banco H2.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
