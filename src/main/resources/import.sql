@@ -16,10 +16,12 @@ INSERT INTO book_genre (book_id, genre_id) VALUES(2, 2);
 INSERT INTO book_genre (book_id, genre_id) VALUES(3, 1);
 
 
-
 INSERT INTO Users (name, street, number, city, state) VALUES('Diego', 'cross street', '17', 'Marlborough','Massachupetis');
 
 INSERT INTO Loan ( loan_date, expected_return_date, actual_return_date, user_id) VALUES ('2024-05-01T10:00:00',                                   '2024-05-15','2024-05-17', 1);
 
 INSERT INTO Loan ( loan_date, expected_return_date, actual_return_date, user_id) VALUES ('2024-05-03T10:00:00','2024-01-15','2024-01-17', 1);
+
+INSERT INTO Loan_Item ( book_id, loan_id) VALUES (1,1);
+INSERT INTO Loan_Item ( book_id, loan_id) VALUES (2,2);
 

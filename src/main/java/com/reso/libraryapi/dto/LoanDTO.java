@@ -1,10 +1,13 @@
 package com.reso.libraryapi.dto;
 
 import com.reso.libraryapi.model.Loan;
+import com.reso.libraryapi.model.LoanItem;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class LoanDTO {
 
@@ -13,16 +16,28 @@ public class LoanDTO {
     private LocalDate expectedReturnDate;
     private LocalDate actualReturnDate;
     private UserDTO user;
+    private Set<LoanItemDTO> loanItems = new HashSet<>();
 
     public LoanDTO() {
     }
 
     public LoanDTO(Loan loan) {
-        setId(loan.getId());
-        setLoanDate(loan.getLoanDate());
-        setUser(new UserDTO(loan.getUser()));
-        setActualReturnDate(loan.getActualReturnDate());
-        setExpectedReturnDate(loan.getExpectedReturnDate());
+        this.id = loan.getId();
+        this.loanDate = loan.getLoanDate();
+        this.expectedReturnDate = loan.getExpectedReturnDate();
+        this.actualReturnDate = loan.getActualReturnDate();
+        this.user = new UserDTO(loan.getUser());
+        for (LoanItem item : loan.getLoanItems()) {
+            this.loanItems.add(new LoanItemDTO(item));
+        }
+    }
+
+    public Set<LoanItemDTO> getLoanItems() {
+        return loanItems;
+    }
+
+    public void setLoanItems(Set<LoanItemDTO> loanItems) {
+        this.loanItems = loanItems;
     }
 
     public Long getId() {

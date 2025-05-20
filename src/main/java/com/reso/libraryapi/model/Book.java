@@ -37,6 +37,9 @@ public class Book {
     @JoinColumn(name = "writer_id")
     private Author writer;
 
+    @OneToMany(mappedBy = "book")
+    private Set<LoanItem> loanItem;
+
     public Book() {
     }
 

@@ -3,51 +3,85 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="-3236.0" y="-2224.0">com.reso.libraryapi.model.Book</node>
-    <node x="-3175.0" y="-2541.0">com.reso.libraryapi.model.Author</node>
-    <node x="-3090.5" y="-2410.5">com.reso.libraryapi.model.Details</node>
-    <node x="-3255.0" y="-2421.0">com.reso.libraryapi.model.Genre</node>
+    <node x="-5528.0" y="-1279.0">com.reso.libraryapi.model.LoanItem</node>
+    <node x="-5379.5" y="-1268.5">com.reso.libraryapi.model.Details</node>
+    <node x="-5655.827173913043" y="-1694.0826086956522">com.reso.libraryapi.model.User</node>
+    <node x="-5517.5" y="-1550.5">com.reso.libraryapi.model.Loan</node>
+    <node x="-5437.266304347826" y="-1149.554347826087">com.reso.libraryapi.model.Genre</node>
+    <node x="-5792.458695652174" y="-1104.9717391304343">com.reso.libraryapi.model.Author</node>
+    <node x="-5792.458695652174" y="-1511.3358695652173">com.reso.libraryapi.model.Book</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.Genre" relationship="TO_MANY">
-      <point x="0.0" y="-107.0" />
-      <point x="-3152.0" y="-2297.0" />
-      <point x="-3192.0" y="-2297.0" />
-      <point x="0.0" y="44.0" />
-    </edge>
     <edge source="com.reso.libraryapi.model.Genre" target="com.reso.libraryapi.model.Book" relationship="TO_MANY">
-      <point x="0.0" y="44.0" />
-      <point x="-3192.0" y="-2257.0" />
-      <point x="-3152.0" y="-2257.0" />
-      <point x="0.0" y="-107.0" />
+      <point x="0.0" y="-44.0" />
+      <point x="-5374.266304347826" y="-1042.8000000000002" />
+      <point x="-5461.0" y="-1042.8000000000002" />
+      <point x="-5461.0" y="-1115.0" />
+      <point x="-5708.458695652174" y="-1115.0" />
+      <point x="0.0" y="-117.5" />
+    </edge>
+    <edge source="com.reso.libraryapi.model.User" target="com.reso.libraryapi.model.Loan" relationship="TO_MANY">
+      <point x="0.0" y="54.5" />
+      <point x="-5594.327173913043" y="-1615.0" />
+      <point x="-5421.0" y="-1615.0" />
+      <point x="0.0" y="-75.5" />
+    </edge>
+    <edge source="com.reso.libraryapi.model.Loan" target="com.reso.libraryapi.model.User" relationship="TO_ONE">
+      <point x="0.0" y="-75.5" />
+      <point x="-5421.0" y="-1635.0" />
+      <point x="-5594.327173913043" y="-1635.0" />
+      <point x="0.0" y="54.5" />
     </edge>
     <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.Details" relationship="TO_ONE">
-      <point x="0.0" y="-107.0" />
-      <point x="-3152.0" y="-2297.0" />
-      <point x="-3012.0" y="-2297.0" />
+      <point x="0.0" y="-117.5" />
+      <point x="-5708.458695652174" y="-1175.0" />
+      <point x="-5301.0" y="-1175.0" />
       <point x="0.0" y="33.5" />
     </edge>
-    <edge source="com.reso.libraryapi.model.Author" target="com.reso.libraryapi.model.Book" relationship="TO_MANY">
-      <point x="0.0" y="44.0" />
-      <point x="-3112.0" y="-2277.0" />
-      <point x="-3192.0" y="-2277.0" />
-      <point x="-3192.0" y="-2257.0" />
-      <point x="-3152.0" y="-2257.0" />
-      <point x="0.0" y="-107.0" />
+    <edge source="com.reso.libraryapi.model.Loan" target="com.reso.libraryapi.model.LoanItem" relationship="TO_MANY">
+      <point x="0.0" y="-75.5" />
+      <point x="-5421.0" y="-1575.0" />
+      <point x="-5541.0" y="-1575.0" />
+      <point x="-5541.0" y="-1355.0" />
+      <point x="-5481.0" y="-1355.0" />
+      <point x="0.0" y="-44.0" />
     </edge>
-    <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.Author" relationship="TO_ONE">
-      <point x="0.0" y="-107.0" />
-      <point x="-3152.0" y="-2297.0" />
-      <point x="-3112.0" y="-2297.0" />
-      <point x="0.0" y="44.0" />
+    <edge source="com.reso.libraryapi.model.Book" target="com.reso.libraryapi.model.LoanItem" relationship="TO_MANY">
+      <point x="0.0" y="-117.5" />
+      <point x="-5708.458695652174" y="-1175.0" />
+      <point x="-5401.0" y="-1175.0" />
+      <point x="-5401.0" y="-1335.0" />
+      <point x="-5481.0" y="-1335.0" />
+      <point x="0.0" y="-44.0" />
+    </edge>
+    <edge source="com.reso.libraryapi.model.LoanItem" target="com.reso.libraryapi.model.Loan" relationship="TO_ONE">
+      <point x="0.0" y="-44.0" />
+      <point x="-5481.0" y="-1375.0" />
+      <point x="-5301.0" y="-1375.0" />
+      <point x="-5301.0" y="-1595.0" />
+      <point x="-5421.0" y="-1595.0" />
+      <point x="0.0" y="-75.5" />
+    </edge>
+    <edge source="com.reso.libraryapi.model.Author" target="com.reso.libraryapi.model.Book" relationship="TO_MANY">
+      <point x="0.0" y="-44.0" />
+      <point x="-5729.458695652174" y="-1115.0" />
+      <point x="-5708.458695652174" y="-1115.0" />
+      <point x="0.0" y="-117.5" />
+    </edge>
+    <edge source="com.reso.libraryapi.model.LoanItem" target="com.reso.libraryapi.model.Book" relationship="TO_ONE">
+      <point x="0.0" y="-44.0" />
+      <point x="-5481.0" y="-1315.0" />
+      <point x="-5561.0" y="-1315.0" />
+      <point x="-5561.0" y="-1135.0" />
+      <point x="-5708.458695652174" y="-1135.0" />
+      <point x="0.0" y="-117.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="1.2000000000000002" showDependencies="true" x="-3077.0833333333335" y="-2266.3333333333326" />
+  <settings layout="Hierarchic Compact" zoom="0.7425343018563357" showDependencies="true" x="-5381.5" y="-1150.5" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
-    <Category>Inner Classes</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
