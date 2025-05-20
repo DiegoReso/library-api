@@ -14,7 +14,6 @@ public class UserDTO {
     public UserDTO() {
     }
 
-
     public UserDTO(User user){
         setId(user.getId());
         setName(user.getName());

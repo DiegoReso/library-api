@@ -11,9 +11,15 @@ INSERT INTO Book (title, author, isbn, publication_date, publisher, number_of_pa
 
 INSERT INTO Genre (name) VALUES ('Ficção'), ('Romance'),('Fantasia');
 
-
 INSERT INTO book_genre (book_id, genre_id) VALUES(1, 3);
 INSERT INTO book_genre (book_id, genre_id) VALUES(2, 2);
 INSERT INTO book_genre (book_id, genre_id) VALUES(3, 1);
 
+
+
 INSERT INTO Users (name, street, number, city, state) VALUES('Diego', 'cross street', '17', 'Marlborough','Massachupetis');
+
+INSERT INTO Loan ( loan_date, expected_return_date, actual_return_date, user_id) VALUES ('2024-05-01T10:00:00',                                   '2024-05-15','2024-05-17', 1);
+
+
+

@@ -3,7 +3,9 @@ package com.reso.libraryapi.model;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -17,7 +19,19 @@ public class User {
     @Embedded
     private Address address;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Loan> loans = new HashSet<>();
+
+
     public User() {
+    }
+
+    public Set<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(Set<Loan> loans) {
+        this.loans = loans;
     }
 
     public Long getId() {
@@ -55,4 +69,7 @@ public class User {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
+
+
 }
