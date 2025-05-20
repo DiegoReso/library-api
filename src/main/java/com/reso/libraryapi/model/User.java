@@ -1,6 +1,7 @@
 package com.reso.libraryapi.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -20,6 +21,7 @@ public class User {
     private Address address;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private Set<Loan> loans = new HashSet<>();
 
 

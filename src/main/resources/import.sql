@@ -21,5 +21,5 @@ INSERT INTO Users (name, street, number, city, state) VALUES('Diego', 'cross str
 
 INSERT INTO Loan ( loan_date, expected_return_date, actual_return_date, user_id) VALUES ('2024-05-01T10:00:00',                                   '2024-05-15','2024-05-17', 1);
 
-
+INSERT INTO Loan ( loan_date, expected_return_date, actual_return_date, user_id) VALUES ('2024-05-03T10:00:00','2024-01-15','2024-01-17', 1);
 
