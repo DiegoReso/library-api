@@ -1,8 +1,13 @@
-# API de Gerenciamento de Biblioteca
+# API de Gerenciamento de Biblioteca Com Spring Booot, Maven, JPA / Hibernate.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Este é um projeto de API para gerenciar uma biblioteca, incluindo usuários, livros, empréstimos e outras funcionalidades relacionadas.
+
+## Propósito do Projeto
+
+Este projeto foi desenvolvido como um exercício individual para aprofundar meus conhecimentos e habilidades em desenvolvimento com spring boot. A intenção não foi apenas criar um produto final funcional, mas também aprender com os erros, experimentar diferentes abordagens e consolidar conceitos importantes.
+
 
 ## Funcionalidades Principais
 
