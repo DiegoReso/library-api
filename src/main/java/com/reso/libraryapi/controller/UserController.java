@@ -1,6 +1,7 @@
 package com.reso.libraryapi.controller;
 
-import com.reso.libraryapi.model.User;
+import com.reso.libraryapi.dto.UserDTO;
+
 import com.reso.libraryapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,8 @@ public class UserController {
     private UserService service;
 
     @GetMapping
-    public ResponseEntity<List<User>>  getAll(){
-        List<User> users = service.getAll();
+    public ResponseEntity<List<UserDTO>>  getAll(){
+        List<UserDTO> users = service.getAll();
         return ResponseEntity.ok(users);
     }
 

@@ -1,5 +1,7 @@
 package com.reso.libraryapi.service;
 
+import com.reso.libraryapi.dto.UserDTO;
+
 import com.reso.libraryapi.model.User;
 import com.reso.libraryapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +16,10 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    @Transactional
-    public List<User> getAll(){
+    @Transactional(readOnly = true)
+    public List<UserDTO> getAll(){
         List<User> users = repository.findAll();
-        return users;
+        return users.stream().map(UserDTO::new).toList() ;
 
 
     }
