@@ -1,6 +1,7 @@
 package com.reso.libraryapi.model;
 
 
+import com.reso.libraryapi.dto.AddressDTO;
 import jakarta.persistence.*;
 
 
@@ -20,6 +21,13 @@ public class Address {
         this.number = number;
         this.city = city;
         this.state = state;
+    }
+
+    public Address(AddressDTO address) {
+        this.street = address.getStreet();
+        this.number = address.getNumber();
+        this.city = address.getCity();
+        this.state = address.getState();
     }
 
 
