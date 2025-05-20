@@ -20,8 +20,6 @@ public class UserService {
     public List<UserDTO> getAll(){
         List<User> users = repository.findAll();
         return users.stream().map(UserDTO::new).toList() ;
-
-
     }
 
 }
